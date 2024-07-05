@@ -1,0 +1,127 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+
+    <!--CSS-->
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'Assets/css/styles.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <img src="{% static 'Assets/images/logo.png' %}" alt="" class="logo" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarS"
+          aria-controls="navbarS"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarS">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'neko' %}" class="nav-link">Neko al azar</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'portafolio' %}" class="nav-link">Portafolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#seccionsobremi" class="nav-link">Cosas que me gustan</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contacto" class="nav-link">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="pelicula-principal">
+      <div class="contenedor">
+        <h3 class="titulo">Pelicula recomendada</h3>
+        <p class="descripcion">
+          "Interestelar" es una epopeya espacial dirigida por Christopher Nolan.
+          La trama sigue a un grupo de exploradores que viajan a través de un
+          agujero de gusano en busca de un nuevo hogar para la humanidad, ante
+          una Tierra devastada por la escasez de recursos. La película explora
+          temas como el tiempo, el amor y el sacrificio mientras desafía los
+          límites de la ciencia y la imaginación.
+        </p>
+        <button role="button" class="boton">
+          <i class="fa-solid fa-play"></i>Ver
+        </button>
+      </div>
+    </div>
+
+    <div class="peliculas-recomendadas contenedor">
+      <div class="contenedor-titulo-controles">
+        <h3>Peliculas recomendadas</h3>
+        <div class="indicadores"></div>
+      </div>
+
+      <div class="contenedor-principal">
+        <button role="button" id="flecha-izquierda" class="flecha-izquierda">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <div class="contenedor-carousel">
+            <div class="carousel">
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli2.avif' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli3.jpg' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli4.webp' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli5.avif' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli6.jpeg' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli7.avif' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli8.webp' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli9.jpeg' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli10.webp' %}" alt=""></a>
+                </div>
+                <div class="pelicula">
+                    <a href="#"><img src="{% static 'Assets/images/peli11.webp' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+        <button role="button" id="flecha-derecha" class="flecha-derecha">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+      </div>
+    </div>
+
+
+    <!--Js-->
+    {% bootstrap_javascript %}
+    <script src="{% static 'Assets/js/peli.js' %}"></script>
+  </body>
+</html>

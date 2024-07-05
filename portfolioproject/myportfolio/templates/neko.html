@@ -1,0 +1,37 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+
+    <!--CSS-->
+    {% bootstrap_css %}
+    <link
+      href="{% static 'Assets/css/styles.css' %}"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'Assets/css/apicss.css' %}" />
+  </head>
+  <body>
+    
+    <button href="{% url 'home' %}" class="aboton" >Volver</button>
+    <h3></h3>
+    <button id="mostrar" type="button-api" >Mostrar Neko</button>
+    
+    <!-- Contenedor donde se mostrará la imagen y el nombre del artista -->
+    <div id="contenido">
+        <!-- La imagen y el nombre del artista serán insertados aquí -->
+    </div>
+
+    <!--Js-->
+    {% bootstrap_javascript %}
+    <script src="{% static 'Assets/js/nekoapi.js' %}"></script>
+  </body>
+</html>

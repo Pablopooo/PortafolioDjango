@@ -1,0 +1,111 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+
+    <!--CSS-->
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'Assets/css/stylesvj.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand"
+          ><span class="text-primary">Pablo</span>Riquelme</a
+        >
+        <img src="{% static 'Assets/images/logo.png' %}" alt="" class="logo" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarS"
+          aria-controls="navbarS"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarS">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'neko' %}" class="nav-link">Neko al azar</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'portafolio' %}" class="nav-link">Portafolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#seccionsobremi" class="nav-link">Cosas que me gustan</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contacto" class="nav-link">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="juego-principal">
+        <div class="contenedor">
+          <h3 class="titulo">Videojuego recomendado</h3>
+          <p class="descripcion">
+            "Hades" es un videojuego de acción y exploración de mazmorras
+            desarrollado por Supergiant Games. Los jugadores controlan a Zagreus,
+            el hijo de Hades, en su intento de escapar del Inframundo con la ayuda
+            de los dioses olímpicos. Cada intento de escape es diferente debido a
+            las mazmorras generadas proceduralmente y las bendiciones cambiantes
+            de los dioses. El juego destaca por su narrativa profunda, combate
+            dinámico y estilo artístico distintivo. Aclamado por su diseño y
+            jugabilidad, ha ganado numerosos premios, incluido el "Mejor Juego del
+            Año".
+          </p>
+          <button role="button" class="boton">
+            <i class="fa-solid fa-play"></i>Ver
+          </button>
+        </div>
+      </section>
+
+      <section class="juegos-recomendadas contenedor">
+        <div class="contenedor-titulo-controles">
+          <h3>Videojuegos recomendados</h3>
+          <div class="indicadores"></div>
+        </div>
+
+        <div class="contenedor-principal">
+          <div class="contenedor-carousel">
+            <div class="carousel">
+              <div class="juego">
+                <a href="#"><img src="{% static 'Assets/images/juego1.avif' %}" alt="Juego 1" /></a>
+              </div>
+              <div class="juego">
+                <a href="#"><img src="{% static 'Assets/images/juego2.jpg' %}" alt="Juego 2" /></a>
+              </div>
+              <div class="juego">
+                <a href="#"><img src="{% static 'Assets/images/juego3.jpeg' %}" alt="Juego 3" /></a>
+              </div>
+              <div class="juego">
+                <a href="#"><img src="{% static 'Assets/images/juego4.avif' %}" alt="Juego 4" /></a>
+              </div>
+              <div class="juego">
+                <a href="#"><img src="{% static 'Assets/images/juego5.jpg' %}" alt="Juego 5" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Js-->
+    {% bootstrap_javascript %}
+    <script src="{% static 'Assets/js/juego.js' %}"></script>
+  </body>
+</html>
